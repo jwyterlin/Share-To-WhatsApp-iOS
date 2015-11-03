@@ -28,6 +28,9 @@
                                 <state key="normal" title="Send">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3UC-pE-Wfe"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meme" translatesAutoresizingMaskIntoConstraints="NO" id="wvR-dY-UF7">
                                 <rect key="frame" x="154" y="28" width="293" height="305"/>
