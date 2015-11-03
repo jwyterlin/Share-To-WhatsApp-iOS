@@ -8,20 +8,50 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import "Alert.h"
+
+@interface ViewController()<UIDocumentInteractionControllerDelegate>
+
+@property(nonatomic,strong) UIDocumentInteractionController *documentInteractionController;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+#pragma mark - View Lifecycle
+
+-(void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Private methods
+
+-(void)shareImage {
+    
+    if ( [[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"whatsapp://app"]] ) {
+        
+        UIImage *iconImage = [UIImage imageNamed:@"YOUR IMAGE"];
+        NSString *savePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/whatsAppTmp.wai"];
+        
+        [UIImageJPEGRepresentation(iconImage, 1.0) writeToFile:savePath atomically:YES];
+        
+        _documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:savePath]];
+        _documentInteractionController.UTI = @"net.whatsapp.image";
+        _documentInteractionController.delegate = self;
+        
+        [_documentInteractionController presentOpenInMenuFromRect:CGRectMake(0, 0, 0, 0) inView:self.view animated: YES];
+        
+        
+    } else {
+
+        [[Alert new] showAlertTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." viewController:self];
+
+    }
+
 }
 
 @end

@@ -15,6 +15,7 @@
 		7B9831711BE90CB5006B019F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B98316F1BE90CB5006B019F /* LaunchScreen.storyboard */; };
 		7B98317C1BE90CB5006B019F /* Share_to_WhatsApp_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B98317B1BE90CB5006B019F /* Share_to_WhatsApp_iOSTests.m */; };
 		7B9831871BE90CB5006B019F /* Share_to_WhatsApp_iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9831861BE90CB5006B019F /* Share_to_WhatsApp_iOSUITests.m */; };
+		7B98319D1BE90FB9006B019F /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B98319C1BE90FB9006B019F /* Alert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		7B9831821BE90CB5006B019F /* Share to WhatsApp iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Share to WhatsApp iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9831861BE90CB5006B019F /* Share_to_WhatsApp_iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Share_to_WhatsApp_iOSUITests.m; sourceTree = "<group>"; };
 		7B9831881BE90CB5006B019F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B98319B1BE90FB9006B019F /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Alert.h; path = Util/Alert.h; sourceTree = "<group>"; };
+		7B98319C1BE90FB9006B019F /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Alert.m; path = Util/Alert.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		7B9831601BE90CB5006B019F /* Share to WhatsApp iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7B9831991BE90F9B006B019F /* Util */,
 				7B9831941BE90CBF006B019F /* AppDelegate */,
 				7B9831981BE90D2C006B019F /* Assets */,
 				7B9831951BE90CE2006B019F /* Controller */,
@@ -178,6 +182,23 @@
 				7B98316D1BE90CB5006B019F /* Assets.xcassets */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		7B9831991BE90F9B006B019F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7B98319A1BE90FA1006B019F /* Alert */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		7B98319A1BE90FA1006B019F /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				7B98319B1BE90FB9006B019F /* Alert.h */,
+				7B98319C1BE90FB9006B019F /* Alert.m */,
+			);
+			name = Alert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +333,7 @@
 			files = (
 				7B9831691BE90CB5006B019F /* ViewController.m in Sources */,
 				7B9831661BE90CB5006B019F /* AppDelegate.m in Sources */,
+				7B98319D1BE90FB9006B019F /* Alert.m in Sources */,
 				7B9831631BE90CB5006B019F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
