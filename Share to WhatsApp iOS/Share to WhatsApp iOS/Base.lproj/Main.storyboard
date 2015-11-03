@@ -16,12 +16,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohb-R0-OKR">
+                                <rect key="frame" x="206" y="497" width="188" height="44"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.75277478448275859" blue="0.3292834051724135" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="26m-q7-zHX"/>
+                                    <constraint firstAttribute="height" constant="44" id="gzi-h1-EAk"/>
+                                </constraints>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meme" translatesAutoresizingMaskIntoConstraints="NO" id="wvR-dY-UF7">
+                                <rect key="frame" x="154" y="28" width="293" height="305"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="305" id="NMI-Zo-Nb1"/>
+                                    <constraint firstAttribute="width" constant="293" id="mG6-KY-q5H"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wvR-dY-UF7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Aut-gh-0Aq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ohb-R0-OKR" secondAttribute="bottom" constant="59" id="C8S-Dy-czg"/>
+                            <constraint firstItem="Ohb-R0-OKR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jbw-XL-bxw"/>
+                            <constraint firstItem="wvR-dY-UF7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TMN-D7-OwB"/>
+                            <constraint firstItem="wvR-dY-UF7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ouA-bA-mR7"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ouA-bA-mR7"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="wvR-dY-UF7" id="uOK-yj-48g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="280" y="337"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="meme" width="293" height="305"/>
+    </resources>
 </document>

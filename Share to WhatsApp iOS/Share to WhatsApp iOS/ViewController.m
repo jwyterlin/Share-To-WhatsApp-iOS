@@ -13,6 +13,7 @@
 @interface ViewController()<UIDocumentInteractionControllerDelegate>
 
 @property(nonatomic,strong) UIDocumentInteractionController *documentInteractionController;
+@property(nonatomic,weak) IBOutlet UIImageView *image;
 
 @end
 
@@ -28,30 +29,42 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - IBAction methods
+
+-(IBAction)sendButtonPressed:(id)sender {
+    [self shareImage:self.image.image];
+}
+
 #pragma mark - Private methods
 
--(void)shareImage {
+-(void)shareImage:(UIImage *)image {
     
-    if ( [[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"whatsapp://app"]] ) {
+    if ( [self hasWhatsApp] ) {
         
-        UIImage *iconImage = [UIImage imageNamed:@"YOUR IMAGE"];
         NSString *savePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/whatsAppTmp.wai"];
         
-        [UIImageJPEGRepresentation(iconImage, 1.0) writeToFile:savePath atomically:YES];
+        [UIImageJPEGRepresentation(image, 1.0) writeToFile:savePath atomically:YES];
         
         _documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:savePath]];
         _documentInteractionController.UTI = @"net.whatsapp.image";
         _documentInteractionController.delegate = self;
         
-        [_documentInteractionController presentOpenInMenuFromRect:CGRectMake(0, 0, 0, 0) inView:self.view animated: YES];
-        
+        [_documentInteractionController presentOpenInMenuFromRect:CGRectMake( 0, 0, 0, 0 ) inView:self.view animated: YES];
         
     } else {
 
-        [[Alert new] showAlertTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." viewController:self];
+        [self showsWhatsAppNotInstalled];
 
     }
 
+}
+
+-(BOOL)hasWhatsApp {
+    return [[UIApplication sharedApplication] canOpenURL: [NSURL URLWithString:@"whatsapp://app"]];
+}
+
+-(void)showsWhatsAppNotInstalled {
+    [[Alert new] showAlertTitle:@"WhatsApp not installed." message:@"Your device has no WhatsApp installed." viewController:self];
 }
 
 @end
