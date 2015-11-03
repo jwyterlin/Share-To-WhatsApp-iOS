@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="width" constant="188" id="26m-q7-zHX"/>
                                     <constraint firstAttribute="height" constant="44" id="gzi-h1-EAk"/>
                                 </constraints>
-                                <state key="normal" title="Send">
+                                <state key="normal" title="Send image">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -40,19 +40,53 @@
                                     <constraint firstAttribute="width" constant="293" id="mG6-KY-q5H"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oh my God meme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-KT-ScW">
+                                <rect key="frame" x="221" y="410" width="157" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="DA6-me-YfQ"/>
+                                    <constraint firstAttribute="height" constant="21" id="gc7-oZ-nfD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiQ-mX-qyn">
+                                <rect key="frame" x="206" y="439" width="188" height="44"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.5" blue="0.82572737068965485" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="BBT-t9-LCg"/>
+                                    <constraint firstAttribute="height" constant="44" id="nVU-Yb-JCt"/>
+                                </constraints>
+                                <state key="normal" title="Send text">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendTextButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gVQ-Yd-J4i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HiQ-mX-qyn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Qk-AB-sJG"/>
                             <constraint firstItem="wvR-dY-UF7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Aut-gh-0Aq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ohb-R0-OKR" secondAttribute="bottom" constant="59" id="C8S-Dy-czg"/>
                             <constraint firstItem="Ohb-R0-OKR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jbw-XL-bxw"/>
                             <constraint firstItem="wvR-dY-UF7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TMN-D7-OwB"/>
+                            <constraint firstItem="fYK-KT-ScW" firstAttribute="top" secondItem="wvR-dY-UF7" secondAttribute="bottom" constant="44" id="W5w-bE-1GU"/>
+                            <constraint firstItem="fYK-KT-ScW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YnO-8R-7wh"/>
+                            <constraint firstItem="HiQ-mX-qyn" firstAttribute="top" secondItem="fYK-KT-ScW" secondAttribute="bottom" constant="8" id="a1O-9V-piu"/>
+                            <constraint firstItem="Ohb-R0-OKR" firstAttribute="top" secondItem="HiQ-mX-qyn" secondAttribute="bottom" constant="14" id="hFT-AL-sGy"/>
+                            <constraint firstItem="HiQ-mX-qyn" firstAttribute="top" secondItem="fYK-KT-ScW" secondAttribute="bottom" constant="41" id="iE5-LY-Zft"/>
                             <constraint firstItem="wvR-dY-UF7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ouA-bA-mR7"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="ouA-bA-mR7"/>
+                                <exclude reference="W5w-bE-1GU"/>
+                                <exclude reference="iE5-LY-Zft"/>
                             </mask>
                         </variation>
                     </view>

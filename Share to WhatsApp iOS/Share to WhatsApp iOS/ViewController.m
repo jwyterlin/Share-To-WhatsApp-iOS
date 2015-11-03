@@ -35,6 +35,10 @@
     [self shareImage:self.image.image];
 }
 
+-(IBAction)sendTextButtonPressed:(id)sender {
+    [self sendText:@"Oh my God Meme"];
+}
+
 #pragma mark - Private methods
 
 -(void)shareImage:(UIImage *)image {
@@ -57,6 +61,20 @@
 
     }
 
+}
+
+-(void)sendText:(NSString*)message {
+    
+    NSString *urlWhats = [NSString stringWithFormat:@"whatsapp://send?text=%@",message];
+    NSString *urlEncoded = [urlWhats stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSURL *whatsappURL = [NSURL URLWithString:urlEncoded];
+    
+    if ( [self hasWhatsApp] ) {
+        [[UIApplication sharedApplication] openURL:whatsappURL];
+    } else {
+        [self showsWhatsAppNotInstalled];
+    }
+    
 }
 
 -(BOOL)hasWhatsApp {
